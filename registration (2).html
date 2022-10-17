@@ -35,7 +35,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                 <label for="first Name" >First Name</label>
-                                <input type="text" class="form-control"id="First Name" required>
+                                <input type="text" class="form-control"id="First Name" required="required">
                                 <div class="valid-feedback"></div>
                                 <div class="invalid-feedback"></div>
                                 </div>
@@ -48,9 +48,9 @@
                         
                             <div class="form-group">
                                 <label for="lastName" >Last Name</label>
-                                <input type="text" class="form-control"id="Last Name">
+                                <input type="text" class="form-control"id="Last Name" required="required">
                             </div>
-                            <div class="col-sm-"> <div class="form-group" required>
+                            <div class="col-sm-"> <div class="form-group" required="required">
                                 <label for="Title" >Degree</label>
                                 
                                     <select id="Title" name="Title">
@@ -58,14 +58,20 @@
                                       <option value="MD.">MD.</option>
                                       <option value="phD candidate.">phD candidate.</option>
                                       <option value="Msc.">Msc.</option>
-                                      <option value="Msc student.">Mscstudent.</option>
+                                      <option value="Msc student.">Msc student.</option>
                                       <option value="Bsc.">Bsc.</option>
                                       <option value="Other.">Other.</option>
                                       
+                                      
                                     </select>
+                                    <div class="form-group" style="padding-top: 20px;">
+                                        <label for="Specific Field Of Study" >Specific Field Of Study</label>
+                                        <input type="text" class="form-control"id="Specific Field Of Study" required="required">
+                                        <br>
+                                    </div> 
                                     <div class="col-sm-"> <div class="form-group">
                                         <label for="Title" >Position</label>
-                                        <select id="Title" name="Title">
+                                        <select id="Title" name="Title" required="required">
                                             <option value="Proffesor">Proffesor.</option>
                                             <option value="assistant prof.">assistant prof.</option>
                                             <option value="Associative prof.">Associative prof.</option>
@@ -74,9 +80,9 @@
                                         
                                             
                                           </select>
-                                          <div class="col-sm-"> <div class="form-group">
+                                          <div class="col-sm-"> <div class="form-group" style="padding-top: 20px;">
                                             <label for="Title" >Speciality</label>
-                                            <select id="Title" name="Title">
+                                            <select id="Title" name="Title" required="required">
                                                 <option value="Aerodynamics">Aerodynamics.</option>
                                                 <option value="Automation.">Automation.</option>
                                                 <option value="biomachanics.">biomachanics.</option>
@@ -142,14 +148,10 @@
                                             
 
                                             
-                                              <div class="form-group">
-                                                <label for="Specific Field Of Study" >Specific Field Of Study</label>
-                                                <input type="text" class="form-control"id="Specific Field Of Study">
-                                                <br>
-                                            </div> 
-                                            <div class="form-group" >
+                                              
+                                            <div class="form-group" style="padding-top: 20px;" >
                                                 <label for="Phone" >Phone</label>
-                                                <input type="number" class="form-control"id="Phone" required>
+                                                <input type="number" class="form-control"id="Phone"required="required">
                                             </div> 
                                         
                                         
@@ -169,19 +171,19 @@
 
                                 <div class="form-group" >
                                     <label for="email" >Email</label>
-                                    <input type="email" class="form-control"id="email">
+                                    <input type="email" class="form-control"id="email" required="required">
                         
                         
                         </div>
                         <div class="form-group" required>
                             <label for="password" >Password</label>
-                            <input type="text" class="form-control"id="password">
+                            <input type="text" class="form-control"id="password" required="required">
                         </div>
                         
                         
                             <div class="form-group">
                                 <label for="Country">Country</label>
-                                <select name="titile" id="title">
+                                <select name="titile" id="title" required="required">
                                     <option value="India">India.</option>
                                                 <option value="United Kingdom.">United Kingdom.</option>
                                                 <option value="USA">USA.</option>
@@ -203,12 +205,12 @@
                             </div>
                                 <div class="form-group">
                                     <label for="City">City</label>
-                                    <input type="text" class="form-control"id="City ">
+                                    <input type="text" class="form-control"id="City " required="required">
                                 </div>
                                 
                                 <div class="form-group">
                                     <label for="Postal Code">Postal Code</label>
-                                    <input type="text" class="form-control"id="postal Code ">
+                                    <input type="text" class="form-control"id="postal Code " required="required">
                                 </div>
                                 <div class="form-group">
                                     <label for="Affiliation">Affiliation:</label>
