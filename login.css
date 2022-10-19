@@ -1,90 +1,22 @@
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 12px 0;
-  display: inline-block;
-  border: 1px solid rgb(63, 45, 205)(0, 17, 94);
-  box-sizing: border-box;
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
 }
-
-button {
-  background-color: #252e67;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+.h-custom {
+  height: calc(100% - 73px);
 }
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-
-
-.psw {
-  padding: 10px !important;
-  padding-top: 5px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
   }
-  .container{
-    padding: 120px;
-  }
+}
 
-  /*footer*/   
-
-  
-
-
-
-
-
-
-
-
-
- 
- <h2 class="fs-2 fw-bold text-dark">
-
-            <p>Publication Ethics</p>
-
-            </h2>
-
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>The editors of the International Journal of Multidisciplinary Engineering Scientific Research & Technology (IJMESRT) are committed to upholding the highest possible ethical standards in publishing and will do all in their power to prevent any publication malpractices from occurring. It is very necessary for all parties involved in the publishing process, including the author, the journal editor, the peer reviewer, and the publisher, to come to an agreement on ethical standards.</p>
-            <h5>Publication Decision</h5>    
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>The editor of IJMSRT is responsible for determining which papers should be published in the journal. In reaching this judgement, the editor (co-editor) may consult with additional editors or reviewers.</p>
-            <h6>Confidentiality</h6>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>Any paper sent for evaluation must be considered as a private document. They must not be displayed to or discussed with anyone unless the editor (co-editor) of IJMSRT has given permission.</p>
-            <h6>Editorial Decision Contribution</h6>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>Editors benefit from peer review while making editing judgments. This will be accomplished using computer tools that allows us to assess the author's originality.</p>
-            <h6>Objectivity and standards</h6>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>Objective reviews should be carried out. It is not acceptable to criticise the author personally. Referees should convey their opinions clearly and with evidence.</p>
-            <h5>Authors Duties</h5><br>
-            <h6>Plagiarism and Originality Recognition of the Source</h6>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>It is imperative that adequate credit be given at all times to the work of others. A reference has to be provided in support of any assertion that an observation or argument has previously been published somewhere else.</p>
-            <h6>Incompleteness in Published Works</h6>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>When an author discovers a significant error or inaccuracy in his or her own published work, it is the author's responsibility to contact the journal editor or publisher as soon as possible and collaborate with the editor in retracing or correcting the manuscript. If the error or inaccuracy was discovered in the author's own work, the author is responsible for retracting or correcting the manuscript.</p>
-            <h5>Ethics</h5>
-            <p style="font-size: 14px;" class="lead fst-italic my-2 col-lg-12 col-md-8 text-dark"><strong>It should be emphasised that we adhere to the standards of the Committee on Publication Ethics (COPE) and have requested membership.</p>
-    </p>          
+.btn {
+  background-color: #252e67 !important;
+}
+.bg-primary {
+  color: #252e67 !important;
+}
