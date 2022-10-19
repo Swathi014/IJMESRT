@@ -1182,3 +1182,6 @@ padding-bottom: 50px;
         object-fit: cover
     }
 /* UPLOAD FILES END */
+.btn{
+    background-color: #252E67 !important;
+}
