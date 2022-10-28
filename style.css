@@ -199,8 +199,8 @@ i
 	right: 2rem;
 	color:white;
 	font-size:3rem;
-	background: rgb(238,174,202);
-	background: linear-gradient(133deg, rgba(255,255,255,1) 0%, rgba(211,210,231,1) 19%, rgba(11,39,73,1) 100%);
+	
+	
 	padding: 1rem;
 	border-radius: 100%;
 	transition: all .6s ease-in-out;
