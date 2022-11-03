@@ -29,10 +29,10 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
 }
 
 // Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "pdf" && $imageFileType != "doc" && $imageFileType != "docx"
+if($imageFileType != "pdf" && $imageFileType != "doc" && $imageFileType != "docx"
 && $imageFileType != "gif" ) {
   // echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-  $error_msg = 'only document and image file type supported';
+  $error_msg = 'only document file type supported';
   echo $error_msg;
   $uploadOk = 0;
 }
