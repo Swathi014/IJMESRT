@@ -1,371 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>IJMESRT | upload</title>
-    
+
 </head>
+
 <body>
 
-  <!--   navbar   -->
-
-  
-
-
-  <nav class="navbar navbar-expand-sm fixed-top " style="background-color: #252E67; padding: 0.5px; ">
-      <a class="navbar-brand" href="index.html">
-        <img src="logo image.jpeg" alt="Logo" style="width:70px; padding-bottom: 10px; padding-left: 20px;">
-      </a>
-      <a href="index.html" class="navbar-brand fs-2">IJMESRT </a>
-    
-
-    <button 
-      class="navbar-toggler" " 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">HOME</a>
-          <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="index.html">journal Overview</a></li>
-            <li><a class="dropdown-item" href="aboutjournal.html">About Journal</a></li>
-            <li><a class="dropdown-item" href="aimsandscope.html">Aims & Scope</a></li>
-            <li><a class="dropdown-item" href="editorialboard.html">Editorial Board</a></li>
-            <li><a class="dropdown-item" href="publicationethics.html">Publication Ethics</a></li>
-            <li><a class="dropdown-item" href="peerreviewprocess.html">Peer Review Process</a></li>
-          </ul>
-          </li>
-
-        <li class="nav-item dropdown me-1">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-offset="10,20">AUTHOR GUIDELINES</a>
-          <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="contents.html">Instruction For Authors</a></li>
-            <li><a class="dropdown-item" href="contents.html">Submission & Varification</a></li>
-            <li><a class="dropdown-item" href="contents.html">Journal Template</a></li>
-            <li><a class="dropdown-item" href="contents.html">Indexing & Abstracting</a></li>
-          </ul>
-          </li>
-
-
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">CONTACT US</a>
-        </li>
-
-        <li class="nav-item">
-          <a href="registration (2).html" class="nav-link">REGISTER</a>
-        </li>
-        <li class="nav-item">
-          <a href="login.html" class="nav-link">LOG IN</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </nav>
-
-<!---        navbar end     -->
+    <!--   navbar   -->
 
 
 
 
+    <nav class="navbar navbar-expand-sm fixed-top " style="background-color: #252E67; padding: 0.5px; ">
+        <a class="navbar-brand" href="index.html">
+            <img src="logo image.jpeg" alt="Logo" style="width:70px; padding-bottom: 10px; padding-left: 20px;">
+        </a>
+        <a href="index.html" class="navbar-brand fs-2">IJMESRT </a>
 
 
+        <button class="navbar-toggler" " 
+      type=" button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!---       UPLOAD FILES     -->
-
-<div class="container-fluid">
-  <div class="row justify-content-center">
-      <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
-          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-              <h2 id="heading">UPLOAD YOUR ARTICLE</h2>
-              <p>Fill all form field to go to next step</p>
-              <form id="msform">
-                  <!-- progressbar -->
-                  <ul id="progressbar">
-                      <li class="active" id="account"><strong>Account</strong></li>
-                      <li id="personal"><strong>Personal</strong></li>
-                      <li id="payment"><strong>Upload Article</strong></li>
-                      <li id="confirm"><strong>Finish</strong></li>
-                  </ul>
-                  <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div> <br> <!-- fieldsets -->
-
-
-                 <fieldset>
-                      <div class="form-card">
-                          <div class="row">
-                              <div class="col-7">
-                                  <h2 class="fs-title">Account Information:</h2>
-                              </div>
-                              <div class="col-5">
-                                  <h2 class="steps">Step 1 - 4</h2>
-                              </div>
-                          </div>
-                         <label class="fieldlabels">Email: *</label> 
-                         <input type="email" name="email" placeholder="Email Id" required="required"/> 
-                         <label class="fieldlabels" >Username: *</label> 
-                         <input type="text" name="uname" placeholder="UserName" /> 
-                         <label class="fieldlabels">Password: *</label> 
-                         <input type="password" name="pwd" placeholder="Password" /> 
-                         <label class="fieldlabels">Confirm Password: *</label> 
-                         <input type="password" name="cpwd" placeholder="Confirm Password" />
-
-                      </div> 
-
-                      <input type="button" name="next" class="next action-button" value="Next" />
-                  </fieldset>
-
-
-
-                  <fieldset>
-
-                      <div class="form-card">
-                          <div class="row">
-                              <div class="col-7">
-                                  <h2 class="fs-title">Personal Information:</h2>
-                              </div>
-                              <div class="col-5">
-                                  <h2 class="steps">Step 2 - 4</h2>
-                              </div>
-                          </div> 
-                          <label class="fieldlabels">First Name: *</label>
-                           <input type="text" name="fname" placeholder="First Name" required="required" /> 
-                           <label class="fieldlabels">Last Name: *</label> 
-                           <input type="text" name="lname" placeholder="Last Name" required="required" /> 
-                           <label class="fieldlabels">Address: *</label>
-                           <input type="text" name="fname" placeholder="First Name" required="required" /> 
-                           <label class="fieldlabels">Affiliation: *</label> 
-                           <input type="text" name="lname" placeholder="Student, Professor, Engineer etc" required="required" /> 
-                           <label class="fieldlabels">Contact No.: *</label> 
-                           <input type="text" name="phno" placeholder="Contact No. "  required="required"/> 
-                           <label class="fieldlabels">Alternate Contact No.: *</label> 
-                           <input type="text" name="phno_2" placeholder="Alternate Contact No." />
-                      </div>
-                       <input type="button" name="next" class="next action-button" value="Next" required="required" /> 
-                      <input type="button" name="previous" class="previous action-button-previous" value="Previous" required="required" />
-                  </fieldset>
-
-
-                  <fieldset>
-                      <div class="form-card">
-                          <div class="row">
-                              <div class="col-7">
-                                  <h2 class="fs-title">Upload Your Journal</h2>
-                              </div>
-                              <div class="col-5">
-                                  <h2 class="steps">Step 3 - 4</h2>
-                              </div>
-                          </div> 
-                          <label class="fieldlabels">Field Of Study: *</label>
-                           <input type="text" name="fname" placeholder="Field Of Study" required="required" /> 
-                           <label class="fieldlabels">Abstract: *</label> 
-                           <input type="text" name="lname" placeholder="Abstract" required="required" rows="5" > 
-                           <textarea rows="5"></textarea>
-                          <label class="fieldlabels">Upload Your Journal:</label> 
-                          <input type="file" name="pic" accept="image/*"> 
-                         
-                      </div> 
-                      <input type="button" name="next" class="next action-button" value="Submit" /> 
-                      <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                  </fieldset>
-
-
-                  <fieldset>
-                      <div class="form-card">
-                          <div class="row">
-                              <div class="col-7">
-                                  <h2 class="fs-title">Finish:</h2>
-                              </div>
-                              <div class="col-5">
-                                  <h2 class="steps">Step 4 - 4</h2>
-                              </div>
-                          </div> <br><br>
-                          <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
-                          <div class="row justify-content-center">
-                              <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
-                          </div> <br><br>
-                          <div class="row justify-content-center">
-                              <div class="col-7 text-center">
-                                  <h5 class="purple-text text-center"> Your Journal Will Be Published After The Approval Of The Editorial Board.The Related Updates Will Be Displayed On Your Registered Profile.</h5>
-                              </div>
-                          </div>
-                      </div>
-                  </fieldset>
-              </form>
-          </div>
-      </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-  <!--footer -->
-
-  <div class="footer">
-    <div class="container">     
-        <div class="row">                       
-            <div class="col-lg-4 col-sm-4 col-xs-12">
-                <div class="single_footer">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="upload.html">Publish Journal</a></li>
-                        <li><a href="#">Download Journal</a></li>
-                    
+        <div class="collapse navbar-collapse" id="navmenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">HOME</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="index.html">journal Overview</a></li>
+                        <li><a class="dropdown-item" href="aboutjournal.html">About Journal</a></li>
+                        <li><a class="dropdown-item" href="aimsandscope.html">Aims & Scope</a></li>
+                        <li><a class="dropdown-item" href="editorialboard.html">Editorial Board</a></li>
+                        <li><a class="dropdown-item" href="publicationethics.html">Publication Ethics</a></li>
+                        <li><a class="dropdown-item" href="peerreviewprocess.html">Peer Review Process</a></li>
                     </ul>
+                </li>
+
+                <li class="nav-item dropdown me-1">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        data-bs-offset="10,20">AUTHOR GUIDELINES</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="contents.html">Instruction For Authors</a></li>
+                        <li><a class="dropdown-item" href="contents.html">Submission & Varification</a></li>
+                        <li><a class="dropdown-item" href="contents.html">Journal Template</a></li>
+                        <li><a class="dropdown-item" href="contents.html">Indexing & Abstracting</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">CONTACT US</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="registration (2).html" class="nav-link">REGISTER</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">LOG IN</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <!---        navbar end     -->
+
+
+
+
+
+
+
+    <!---       UPLOAD FILES     -->
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+                <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                    <h2 id="heading">UPLOAD YOUR ARTICLE</h2>
+                    <p>Fill all form field to go to next step</p>
+                    <form id="msform" action="upload.php" method="post" enctype="multipart/form-data">
+                        <!-- progressbar -->
+                        <ul id="progressbar">
+                            <li class="active" id="account"><strong>Account</strong></li>
+                            <li id="personal"><strong>Personal</strong></li>
+                            <li id="payment"><strong>Upload Article</strong></li>
+                            <li id="confirm"><strong>Finish</strong></li>
+                        </ul>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                                aria-valuemin="0" aria-valuemax="100"></div>
+                        </div> <br> <!-- fieldsets -->
+
+
+                        <fieldset class="was-validated">
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Account Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 1 - 4</h2>
+                                    </div>
+                                </div>
+                                <label class="fieldlabels">Email: *</label>
+                                <input type="email" class="form-control" name="email" placeholder="Email Id" required>
+                                <label class="fieldlabels">Username: *</label>
+                                <input type="text" class="form-control" name="uname" placeholder="UserName" required />
+                                <label class="fieldlabels">Password: *</label>
+                                <input type="password" name="pwd" placeholder="Password" class="form-control" required>
+                                <label class="fieldlabels">Confirm Password: *</label>
+                                <input type="password" name="cpwd" placeholder="Confirm Password" class="form-control"
+                                    required>
+
+                            </div>
+
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                        </fieldset>
+
+
+
+                        <fieldset class="was-validated">
+
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Personal Information:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 2 - 4</h2>
+                                    </div>
+                                </div>
+                                <label class="fieldlabels">First Name: *</label>
+                                <input type="text" name="fname" placeholder="First Name" class="form-control" required>
+                                <label class="fieldlabels">Last Name: *</label>
+                                <input type="text" name="lname" placeholder="Last Name" class="form-control" required>
+                                <label class="fieldlabels">Address: *</label>
+                                <input type="text" name="addr" placeholder="Address" class="form-control" required>
+                                <label class="fieldlabels">Affiliation: *</label>
+                                <input type="text" name="affl" placeholder="Student, Professor, Engineer etc"
+                                    class="form-control" required>
+                                <label class="fieldlabels">Contact No.: *</label>
+                                <input type="tel" name="phno" placeholder="Contact No. " class="form-control" required>
+                                <label class="fieldlabels">Alternate Contact No.: *</label>
+                                <input type="tel" name="phno_2" placeholder="Alternate Contact No." />
+                            </div>
+                            <input type="button" name="next" class="next action-button" value="Next"
+                                required="required">
+                            <input type="button" name="previous" class="previous action-button-previous"
+                                value="Previous" class="form-control" required>
+                        </fieldset>
+
+
+                        <fieldset class="was-validated">
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Upload Your Journal</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 3 - 4</h2>
+                                    </div>
+                                </div>
+                                <label class="fieldlabels">Field Of Study: *</label>
+                                <input type="text" name="fstudy" placeholder="Field Of Study" class="form-control"
+                                    required>
+                                <label class="fieldlabels">Abstract: *</label>
+                                <input type="text" name="abstract" placeholder="Abstract" required="required" rows="5"
+                                    class="form-control" required>
+                                <textarea rows="5"></textarea>
+                                <label class="fieldlabels">Upload Your Journal:</label>
+                                <input type="file" id="fileToUpload" name="fileToUpload" accept=".pdf, .doc, .docx"
+                                    class="form-control" required>
+
+                            </div>
+                            <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                            <input type="button" name="previous" class="previous action-button-previous"
+                                value="Previous" />
+                        </fieldset>
+
+
+                        <fieldset>
+                            <div class="form-card">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <h2 class="fs-title">Finish:</h2>
+                                    </div>
+                                    <div class="col-5">
+                                        <h2 class="steps">Step 4 - 4</h2>
+                                    </div>
+                                </div> <br><br>
+                                <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                                <div class="row justify-content-center">
+                                    <div class="col-3"> <img src="/success.png" class="fit-image">
+                                    </div>
+                                </div> <br><br>
+                                <div class="row justify-content-center">
+                                    <div class="col-7 text-center">
+                                        <h5 class="purple-text text-center"> Your Journal Will Be Published After The
+                                            Approval Of The Editorial Board.The Related Updates Will Be Displayed On
+                                            Your Registered Profile.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
                 </div>
             </div>
-            
-            <!--- END COL --> 
-
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single_footer single_footer_address">
-                    <h4>Page Link</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Terms & Condition</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        
-                        
-                    </ul>
-                </div>
-            </div>
-            
-            <!--- END COL -->
+        </div>
+    </div>
 
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="single_footer single_footer_address">
-                    <h4>Subscribe today</h4>
-                    <div class="signup_form">                           
-                        <form action="#" class="subscribe">
-                            <input type="text" class="subscribe__input" placeholder="Enter Email Address">
-                            <button type="button" class="subscribe__btn"><i class="fas fa-paper-plane"></i></button>
-                        </form>
+
+
+
+
+
+
+
+
+    <!--footer -->
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-4 col-xs-12">
+                    <div class="single_footer">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="upload.html">Publish Journal</a></li>
+                            <li><a href="#">Download Journal</a></li>
+
+                        </ul>
                     </div>
                 </div>
-                                      
+
+                <!--- END COL -->
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single_footer single_footer_address">
+                        <h4>Page Link</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--- END COL -->
+
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single_footer single_footer_address">
+                        <h4>Subscribe today</h4>
+                        <div class="signup_form">
+                            <form action="#" class="subscribe">
+                                <input type="text" class="subscribe__input" placeholder="Enter Email Address">
+                                <button type="button" class="subscribe__btn"><i class="fas fa-paper-plane"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--- END COL -->
+
             </div>
-            
-            <!--- END COL --> 
+
+            <!--- END ROW -->
+
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <p class="copyright">Copyright © 2022 <a href="#">IJMESRT</a>.</p>
+                </div>
+
+                <!--- END COL -->
+
+            </div>
+
+            <!--- END ROW -->
 
         </div>
-        
-        <!--- END ROW --> 
 
-        <div class="row">
-            <div class="col-lg-12 col-sm-12 col-xs-12">
-                <p class="copyright">Copyright © 2022 <a href="#">IJMESRT</a>.</p>
-            </div>
-            
-            <!--- END COL --> 
-
-        </div>
-        
-        <!--- END ROW -->   
+        <!--- END CONTAINER -->
 
     </div>
-    
-    <!--- END CONTAINER -->
+    <script type="text/javascript">$(document).ready(function () {
 
-</div>
-<script>$(document).ready(function(){
+            var current_fs, next_fs, previous_fs; //fieldsets
+            var opacity;
+            var current = 1;
+            var steps = $("fieldset").length;
 
-  var current_fs, next_fs, previous_fs; //fieldsets
-  var opacity;
-  var current = 1;
-  var steps = $("fieldset").length;
-  
-  setProgressBar(current);
-  
-  $(".next").click(function(){
-  
-  current_fs = $(this).parent();
-  next_fs = $(this).parent().next();
-  
-  //Add Class Active
-  $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-  
-  //show the next fieldset
-  next_fs.show();
-  //hide the current fieldset with style
-  current_fs.animate({opacity: 0}, {
-  step: function(now) {
-  // for making fielset appear animation
-  opacity = 1 - now;
-  
-  current_fs.css({
-  'display': 'none',
-  'position': 'relative'
-  });
-  next_fs.css({'opacity': opacity});
-  },
-  duration: 500
-  });
-  setProgressBar(++current);
-  });
-  
-  $(".previous").click(function(){
-  
-  current_fs = $(this).parent();
-  previous_fs = $(this).parent().prev();
-  
-  //Remove class active
-  $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-  
-  //show the previous fieldset
-  previous_fs.show();
-  
-  //hide the current fieldset with style
-  current_fs.animate({opacity: 0}, {
-  step: function(now) {
-  // for making fielset appear animation
-  opacity = 1 - now;
-  
-  current_fs.css({
-  'display': 'none',
-  'position': 'relative'
-  });
-  previous_fs.css({'opacity': opacity});
-  },
-  duration: 500
-  });
-  setProgressBar(--current);
-  });
-  
-  function setProgressBar(curStep){
-  var percent = parseFloat(100 / steps) * curStep;
-  percent = percent.toFixed();
-  $(".progress-bar")
-  .css("width",percent+"%")
-  }
-  
-  $(".submit").click(function(){
-  return false;
-  })
-  
-  });</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+            setProgressBar(current);
+
+            $(".next").click(function () {
+
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+
+                // function onSuccess() {
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        next_fs.css({ 'opacity': opacity });
+                    },
+                    duration: 500
+                });
+                setProgressBar(++current);
+                // }
+            });
+
+            $(".previous").click(function () {
+
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+
+                //Remove class active
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+                //show the previous fieldset
+                previous_fs.show();
+
+                //hide the current fieldset with style
+                current_fs.animate({ opacity: 0 }, {
+                    step: function (now) {
+                        // for making fielset appear animation
+                        opacity = 1 - now;
+
+                        current_fs.css({
+                            'display': 'none',
+                            'position': 'relative'
+                        });
+                        previous_fs.css({ 'opacity': opacity });
+                    },
+                    duration: 500
+                });
+                setProgressBar(--current);
+            });
+
+            function setProgressBar(curStep) {
+                var percent = parseFloat(100 / steps) * curStep;
+                percent = percent.toFixed();
+                $(".progress-bar")
+                    .css("width", percent + "%")
+            }
+
+            $(".submit").click(function () {
+                // return false;
+
+
+                // $("#fileToUpload").fileinput({
+                //     uploadUrl: "uploads.php",
+                //     allowedFileExtensions: ['jpg', 'png', 'pdf'],
+                //     overwriteInitial: false,
+                //     maxFileSize: 2000,
+                //     maxFilesNum: 10,
+                //     // slugCallback: function (filename) {
+                //     //     return filename.replace('(', '_').replace(']', '_');
+
+                //     // }
+                // });
+                console.log('Submit clicked');
+                // current_fs = $(this).parent();
+                // next_fs = $(this).parent().next();
+
+                // // function onSuccess() {
+                // //Add Class Active
+                // $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+
+                // //show the next fieldset
+                // next_fs.show();
+                // //hide the current fieldset with style
+                // current_fs.animate({ opacity: 0 }, {
+                //     step: function (now) {
+                //         // for making fielset appear animation
+                //         opacity = 1 - now;
+
+                //         current_fs.css({
+                //             'display': 'none',
+                //             'position': 'relative'
+                //         });
+                //         next_fs.css({ 'opacity': opacity });
+                //     },
+                //     duration: 500
+                // });
+                // setProgressBar(++current);
+                // }
+            })
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
