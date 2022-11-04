@@ -40,7 +40,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">HOME</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#journaloverview">journal Overview</a></li>
+            <li><a class="dropdown-item" href="index.html">journal Overview</a></li>
             <li><a class="dropdown-item" href="aboutjournal.html">About Journal</a></li>
             <li><a class="dropdown-item" href="aimsandscope.html">Aims & Scope</a></li>
             <li><a class="dropdown-item" href="editorialboard.html">Editorial Board</a></li>
@@ -81,11 +81,14 @@
         <form action="login.php" method="post">
 
           <div class="container">
-            <label for="uname"><b>Username</b></label>
+            <label for="uname"><b>Username *</b></label>
             <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
-            <label for="psw"><b>Password</b></label>
+            <label for="psw"><b>Password *</b></label>
             <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+            
+            <label for="orcid"><b>ORCID </b></label>
+            <input type="text" placeholder="Enter ORCID" name="orcid" id="orcid" >
 
             <button type="submit" name="submit" value="submit" class="btn btn-primary" >Login</button>
             <label>
