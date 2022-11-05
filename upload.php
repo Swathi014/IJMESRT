@@ -77,7 +77,7 @@ function toDB()
       $email = $_POST['email'];
       $username = $_POST['uname'];
       $password = $_POST['cpwd'];
-      $fullname = $_POST['fname'];
+      $firstname = $_POST['fname'];
       $lastname = $_POST['lname'];
       $addr = $_POST['addr'];
       $affl = $_POST['affl'];
@@ -96,7 +96,7 @@ function toDB()
         die('Could not connect to the database.');
       } else {
         $Select = "SELECT email FROM article WHERE email = ? LIMIT 1";
-        $Insert = "INSERT INTO article(email, username, password, fullname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $Insert = "INSERT INTO article(email, username, password, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($Select);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -107,7 +107,7 @@ function toDB()
         if ($rnum == 0) {
           $stmt->close();
           $stmt = $conn->prepare($Insert);
-          $stmt->bind_param("ssssssssssss", $email, $username, $password, $fullname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $fileToUpload);
+          $stmt->bind_param("ssssssssssss", $email, $username, $password, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $fileToUpload);
           if ($stmt->execute()) {
             // echo "New record inserted sucessfully.";
             readfile('index.html');
