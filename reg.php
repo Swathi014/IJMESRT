@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
+    include('connection.php');
     if (isset($_POST['uname']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) && isset($_POST['pwd'])) {
         $username = $_POST['uname'];
         $firstname = $_POST['fname'];
@@ -8,12 +9,14 @@ if (isset($_POST['submit'])) {
         $password = $_POST['pwd'];
 
         //connection phase
-        $host = "localhost";
-        $dbUsername = "root";
-        $dbPassword = "";
-        $dbName = "article_site";
-        $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
-        if ($conn->connect_error) {
+        // $host = "localhost";
+        // $dbUsername = "root";
+        // $dbPassword = "";
+        // $dbName = "article_site";
+        // $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+
+        // if ($conn->connect_error) {
+        if (mysqli_connect_errno()) {
             die('Could not connect to the database.');
         } else {
             $Select = "SELECT username FROM user WHERE username = ? LIMIT 1";
@@ -37,15 +40,18 @@ if (isset($_POST['submit'])) {
                     echo $stmt->error;
                 }
             } else {
-                echo "Someone already registers using this username.";
+                // echo "Someone already registers using this username.";
+                echo '<script>alert("Someone already registers using this username")</script>';
             }
             $stmt->close();
             $conn->close();
         }
     } else {
-        echo "All field are required.";
+        // echo "All field are required.";
+        echo '<script>alert("All field are required.")</script>';
         die();
     }
 } else {
-    echo "submit not fired !!";
+    // echo "submit not fired !!";
+    echo '<script>alert("Something Went Wrong!? Please try again later.")';
 }
