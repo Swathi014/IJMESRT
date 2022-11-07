@@ -1,15 +1,17 @@
 <?php
 if (isset($_POST['submit'])) {
+    include('connection.php');
     if (isset($_POST['uname']) && isset($_POST['psw'])) {
         $username = $_POST['uname'];
         $password = $_POST['psw'];
 
-        $host = "localhost";
-        $dbUsername = "root";
-        $dbPassword = "";
-        $dbName = "article_site";
-        $conn = mysqli_connect($host, $dbUsername, $dbPassword, $dbName);
-        if ($conn->connect_error) {
+        // $host = "localhost";
+        // $dbUsername = "root";
+        // $dbPassword = "";
+        // $dbName = "article_site";
+        // $conn = mysqli_connect($host, $dbUsername, $dbPassword, $dbName);
+
+        if (mysqli_connect_errno()) {
             die('Could not connect to the database.');
         } else {
 
@@ -27,7 +29,9 @@ if (isset($_POST['submit'])) {
 
                 if ($count == 1) {
                     // echo "<h1><center> Login successful </center></h1>";
-                    readfile('dashboard.html');
+                    // readfile('dashboard.html');
+                    header('Location: dashboard.html');
+                    exit();
                 } else {
                     echo "<h1> Login failed. Invalid username or password.</h1>";
                 }
