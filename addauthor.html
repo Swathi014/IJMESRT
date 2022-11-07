@@ -17,50 +17,51 @@
     <div class="container" style="background-color:#ffffff" ;>
         <div class="row col-md-9 col-md-offset-0" style="padding-left: 240px;">
             <div class="panel" style="margin-top: 20px;">
-                <div class="panel-heading text-light" style="background-color: #252E67";>
+                <div class="panel-heading text-light" style="background-color: #252E67" ;>
                     <h1 style="color: white; text-align: center;">Add/Remove Author</h1>
                 </div>
                 <div class="panel panel-body">
-                    <form action="reg.php" method="post">
+                    <form action="add.php" method="post">
                         <div class="row">
-                            
+
 
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="email">Email *</label>
-                                    <input type="email" class="form-control" id="email" name="email" required="required">
+                                    <input type="email" class="form-control" id="email" name="email" required
+                                        >
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label for="Title">Title</label>
-    
+
                                         <select id="Title" name="Title" class="form-control">
                                             <option value="Dr.">Dr.</option>
                                             <option value="Prof.">Prof.</option>
                                             <option value="Mr.">Mr</option>
                                             <option value="Ms.">Ms.</option>
                                         </select>
-    
+
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="First Name">First Name *</label>
-                                    <input type="text" class="form-control" id="fname" name="fname" required="required">
+                                    <input type="text" class="form-control" id="fname" name="fname" >
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="lastName">Last Name *</label>
-                            <input type="text" class="form-control" id="lname" name="lname" required="required">
+                            <input type="text" class="form-control" id="lname" name="lname" >
                         </div>
                         <div class="form-group">
-                            <label for="lastName">ORCID *</label>
-                            <input type="text" class="form-control" id="lname" name="lname" required="required">
+                            <label for="userName">User Name *</label>
+                            <input type="text" class="form-control" id="uname" name="uname" required>
                         </div>
                         <div class="col-sm-">
-                            <div class="form-group" required="required">
+                            <div class="form-group" >
                                 <label for="Title">Degree *</label>
 
                                 <select id="Title" name="Title" class="form-control" class="form-control">
@@ -77,7 +78,7 @@
                                 <div class="col-sm-">
                                     <div class="form-group">
                                         <label for="Title">Position</label>
-                                        <select id="Title" name="Title" required="required" class="form-control">
+                                        <select id="Title" name="Title"  class="form-control">
                                             <option value="Proffesor">Proffesor.</option>
                                             <option value="assistant prof.">assistant prof.</option>
                                             <option value="Associative prof.">Associative prof.</option>
@@ -86,67 +87,65 @@
 
 
                                         </select>
-                                        
 
 
 
-                                                <div class="form-group" style="padding-top: 20px;">
-                                                    <label for="Phone">Phone *</label>
-                                                    <input type="number" class="form-control" id="Phone">
-                                                </div>
 
-
-
-                                            </div>
-                                        </div>
-                                        
-
-
-                                        <div class="form-group">
-                                            <label for="Country">Country *</label>
-                                            <select name="titile" id="title" required="required" class="form-control">
-                                                <option value="India">India.</option>
-                                                <option value="United Kingdom.">United Kingdom.</option>
-                                                <option value="USA">USA.</option>
-                                                <option value="France.">France.</option>
-                                                <option value="Finland.">Finland.</option>
-                                                <option value="Canada">Canada.</option>
-                                                <option value="Bahrain.">Bahrain.</option>
-                                                <option value="Australia.">Australia.</option>
-                                                <option value="Austria.">Austria.</option>
-                                                <option value="Argentina">Argentina.</option>
-                                                <option value="Belgium.">Belgium.</option>
-                                                <option value="Brazil.">Brazil.</option>
-
-
-                                            </select>
-
-
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="City">City</label>
-                                            <input type="text" class="form-control" id="City ">
-                                        </div>
-
-                                       
-                                        <div class="form-group">
-                                            <label for="Affiliation">Affiliation:</label>
-                                            <textarea class="form-control" rows="5" id="Affiliation"></textarea>
-
+                                        <div class="form-group" style="padding-top: 20px;">
+                                            <label for="Phone">Phone *</label>
+                                            <input type="number" class="form-control" id="Phone">
                                         </div>
 
 
 
                                     </div>
-                                    <br>
-
-
-                                    <button type="submit" class="btn btn-primary" value="submit"
-                                        name="submit">Add</button>
-                                        <button type="submit" class="btn btn-primary" value="submit"
-                                        name="submit">Remove</button>
                                 </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="Country">Country *</label>
+                                    <select name="titile" id="title"  class="form-control">
+                                        <option value="India">India.</option>
+                                        <option value="United Kingdom.">United Kingdom.</option>
+                                        <option value="USA">USA.</option>
+                                        <option value="France.">France.</option>
+                                        <option value="Finland.">Finland.</option>
+                                        <option value="Canada">Canada.</option>
+                                        <option value="Bahrain.">Bahrain.</option>
+                                        <option value="Australia.">Australia.</option>
+                                        <option value="Austria.">Austria.</option>
+                                        <option value="Argentina">Argentina.</option>
+                                        <option value="Belgium.">Belgium.</option>
+                                        <option value="Brazil.">Brazil.</option>
+
+
+                                    </select>
+
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="City">City</label>
+                                    <input type="text" class="form-control" id="City ">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="Affiliation">Affiliation:</label>
+                                    <textarea class="form-control" rows="5" id="Affiliation"></textarea>
+
+                                </div>
+
+
+
+                            </div>
+                            <br>
+
+
+                            <button type="submit" class="btn btn-primary" value="submit" name="submit" >Add</button>
+                            <!-- <button type="submit" class="btn btn-primary" value="submit" name="submit">Remove</button> -->
+                        </div>
 
 
 

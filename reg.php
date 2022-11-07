@@ -8,12 +8,6 @@ if (isset($_POST['submit'])) {
         $email = $_POST['email'];
         $password = $_POST['pwd'];
 
-        //connection phase
-        // $host = "localhost";
-        // $dbUsername = "root";
-        // $dbPassword = "";
-        // $dbName = "article_site";
-        // $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
 
         // if ($conn->connect_error) {
         if (mysqli_connect_errno()) {
