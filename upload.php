@@ -1,11 +1,13 @@
 <?php
+$status = "";
 if (isset($_POST['submit'])) {
   if (
-    isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['cpwd']) &&
+    isset($_POST['email']) && isset($_POST['uname']) &&
     isset($_POST['fname']) && isset($_POST['lname']) &&
     isset($_POST['addr']) && isset($_POST['affl']) && isset($_POST['phno']) && isset($_POST['phno_2']) && isset($_POST['fstudy']) && isset($_POST['abstract'])
   ) {
     toSave();
+    // toVerify();
   } else {
     echo "Something Went Wrong?! Please try again later.";
   }
@@ -60,6 +62,7 @@ function toSave()
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
       toDB();
+
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
@@ -69,14 +72,14 @@ function toDB()
 {
   if (isset($_POST['submit'])) {
     if (
-      isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['cpwd']) &&
+      isset($_POST['email']) && isset($_POST['uname']) &&
       isset($_POST['fname']) && isset($_POST['lname']) &&
       isset($_POST['addr']) && isset($_POST['affl']) && isset($_POST['phno']) && isset($_POST['phno_2']) && isset($_POST['fstudy']) && isset($_POST['abstract'])
     ) {
 
       $email = $_POST['email'];
       $username = $_POST['uname'];
-      $password = $_POST['cpwd'];
+      // $password = $_POST['cpwd'];
       $firstname = $_POST['fname'];
       $lastname = $_POST['lname'];
       $addr = $_POST['addr'];
@@ -96,7 +99,7 @@ function toDB()
         die('Could not connect to the database.');
       } else {
         $Select = "SELECT email FROM article WHERE email = ? LIMIT 1";
-        $Insert = "INSERT INTO article(email, username, password, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $Insert = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($Select);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -107,7 +110,7 @@ function toDB()
         if ($rnum == 0) {
           $stmt->close();
           $stmt = $conn->prepare($Insert);
-          $stmt->bind_param("ssssssssssss", $email, $username, $password, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $fileToUpload);
+          $stmt->bind_param("sssssssssss", $email, $username, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $fileToUpload);
           if ($stmt->execute()) {
             // echo "New record inserted sucessfully.";
             readfile('index.html');
