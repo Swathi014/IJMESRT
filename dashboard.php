@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  if(isset($_SESSION["sessionuser"])){
+    if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
+      readfile('503error.html');
+      exit();
+    }
+  }else {
+    readfile('503error.html');
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +51,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href=index.html>Home</a></li>
-              <li><a class="dropdown-item" href=#>Log Out</a></li>
+              <li><a class="dropdown-item" href=logout.php>Log Out</a></li>
 
             </ul>
           </li>

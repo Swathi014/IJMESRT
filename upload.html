@@ -1,3 +1,16 @@
+<?php
+session_start();
+try{
+if(!isset($_SESSION['sessionuser']) && !isset($_SESSION['sessionadmin'])){
+  readfile('503error.html');
+  exit();
+}
+} catch(e) {
+    readfile('503error.html');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,8 +78,8 @@
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">CONTACT US</a>
                 </li>
+                <li class="nav-item"><a href="logout.php" class="nav-link">LOG OUT</a></li>
 
-                
             </ul>
         </div>
         </div>
@@ -116,16 +129,16 @@
                                 <input type="email" class="form-control" name="email" placeholder="Email Id" required>
                                 <label class="fieldlabels">Username: *</label>
 
-                            <input type="text" class="form-control" name="uname" placeholder="UserName" required />
-                              <!--  <label class="fieldlabels">Password: *</label>
+                                <input type="text" class="form-control" name="uname" placeholder="UserName" required />
+                                <!--  <label class="fieldlabels">Password: *</label>
                                 <input type="password" name="pwd" placeholder="Password" class="form-control" required>
                                 <label class="fieldlabels">Confirm Password: *</label>
                                 <input type="password" name="cpwd" placeholder="Confirm Password" class="form-control"
                                     required>-->
-                                
+
 
                             </div>
-                            
+
                             <input type="button" name="next" class="next action-button" value="Next" />
                             <!-- <input type="submit" name="submit" class="submit action-button" value="Save" /> -->
                         </fieldset>
@@ -159,7 +172,7 @@
                             </div>
                             <input type="button" name="next" class="next action-button" value="Next"
                                 required="required">
-                                <!-- <input type="submit" name="submit" class="submit action-button" value="Save" /> -->
+                            <!-- <input type="submit" name="submit" class="submit action-button" value="Save" /> -->
                             <input type="button" name="previous" class="previous action-button-previous"
                                 value="Previous" class="form-control" required>
                         </fieldset>
@@ -179,9 +192,9 @@
                                 <input type="text" name="fstudy" placeholder="Field Of Study" class="form-control"
                                     required>
                                 <label class="fieldlabels">Abstract: *</label>
-                                
-                                <textarea rows="5" type="text" name="abstract" placeholder="Abstract" required="required" rows="5"
-                                class="form-control" required></textarea>
+
+                                <textarea rows="5" type="text" name="abstract" placeholder="Abstract"
+                                    required="required" rows="5" class="form-control" required></textarea>
                                 <label class="fieldlabels">Upload Your Journal:</label>
                                 <input type="file" id="fileToUpload" name="fileToUpload" accept=".pdf, .doc, .docx"
                                     class="form-control" required>
@@ -189,7 +202,7 @@
                             </div>
                             <input type="submit" name="submit" class="submit action-button" value="sumbit" />
                             <!-- <input type="submit" name="submit" class="submit action-button" value="Save" /> -->
-                            
+
                             <input type="button" name="previous" class="previous action-button-previous"
                                 value="Previous" />
                         </fieldset>
