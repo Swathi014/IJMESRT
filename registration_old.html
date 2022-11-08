@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <title>REGISTRATION</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container" style="background-color:#ffffff" ;>
+        <div class="row col-md-12 col-md-offset-0">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h1>REGISTRATION FORM</h1>
+                </div>
+                <div class="panel panel-body">
+                    <form name="regform" action="reg.php" onsubmit="return validation()" method="post">
+                        <div class="row">
+                            
+
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="Title">Title</label>
+
+                                    <select id="Title" name="Title" class="form-control">
+                                        <option value="Mr.">Mr</option>
+                                        <option value="Ms.">Ms.</option>
+                                        <option value="Dr.">Dr.</option>
+                                        <option value="Prof.">Prof.</option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="first Name">User Name</label>
+                                    <input type="text" class="form-control" id="uname" name="uname" required="required">
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="First Name">First Name</label>
+                                    <input type="text" class="form-control" id="fname" name="fname" required="required">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" id="lname" name="lname" required="required">
+                        </div>
+                        <div class="col-sm-">
+                            <div class="form-group" required="required">
+                                <label for="Title">Degree</label>
+
+                                <select id="Title" name="Title" class="form-control" class="form-control">
+                                    <option value="ph.D">ph.D.</option>
+                                    <option value="MD.">MD.</option>
+                                    <option value="phD candidate.">phD candidate.</option>
+                                    <option value="Msc.">Msc.</option>
+                                    <option value="Msc student.">Msc student.</option>
+                                    <option value="Bsc.">Bsc.</option>
+                                    <option value="Other.">Other.</option>
+                                </select>
+
+                                <div class="form-group" style="padding-top: 20px;">
+                                    <label for="Specific Field Of Study">Specific Field Of Study</label>
+                                    <input type="text" class="form-control" id="Specific Field Of Study">
+                                    <br>
+                                </div>
+                                <div class="col-sm-">
+                                    <div class="form-group">
+                                        <label for="Title">Position</label>
+                                        <select id="Title" name="Title" required="required" class="form-control">
+                                            <option value="Proffesor">Proffesor.</option>
+                                            <option value="assistant prof.">assistant prof.</option>
+                                            <option value="Associative prof.">Associative prof.</option>
+                                            <option value="Instructor.">Instructor.</option>
+                                            <option value="Others.">Others.</option>
+
+
+                                        </select>
+                                        <div class="col-sm-">
+                                            <div class="form-group" style="padding-top: 20px;">
+                                                <label for="Title">Speciality</label>
+                                                <select id="Title" name="Title" required="required"
+                                                    class="form-control">
+                                                    <option value="Aerodynamics">Aerodynamics.</option>
+                                                    <option value="Automation.">Automation.</option>
+                                                    <option value="biomachanics.">biomachanics.</option>
+                                                    <option value="Castings.">Castings.</option>
+                                                    <option value="Composite Materials.">Composite Materials.</option>
+                                                    <option value="compressible Flow.">compressible flow.</option>
+                                                    <option value="Computational Fluid dynamics (CFD).">Computational
+                                                        fluid dynamics (CFD).</option>
+                                                    <option value="Computational Fluid Mechanics(CFM).">Computational
+                                                        Fluid Mechanics(CFM).</option>
+                                                    <option value="Control.">Control.</option>
+                                                    <option value="Damage Mechanics.">Damage Mechanics.</option>
+                                                    <option value="Daynamics.">Daynamics.</option>
+                                                    <option value="Dynamic Response.">Dynamic Response.</option>
+                                                    <option value="Elasticity.">Elasticity.</option>
+                                                    <option value="Energy science and technology.">Energy science and
+                                                        technology.</option>
+                                                    <option value="Energy Systems.">Energy Systems.</option>
+                                                    <option value="Environmental Applications.">Environmental
+                                                        Applications.</option>
+                                                    <option value="Fatigue.">Fatigue.</option>
+                                                    <option value="Finite element methods(FEM).">Finite element
+                                                        methods(FEM).</option>
+                                                    <option value="Fluid mechanics.">Fluid mechanics.</option>
+                                                    <option value="Forced response.">Forced response.</option>
+                                                    <option value="Forming.">Forming.</option>
+                                                    <option value="Fracture mechanics.">Fracture mechanics.</option>
+                                                    <option value="Free response.">Free response.</option>
+                                                    <option value="Fuel cells.">Fuel cells.</option>
+                                                    <option value="Gas dynamics.">Gas dynamics.</option>
+                                                    <option value="Heat and mass transfer.">Heat and mass transfer.
+                                                    </option>
+                                                    <option value="Hydraulic and pneumatic systems.">Hydraulic and
+                                                        pneumatic systems.</option>
+                                                    <option value="Impact Mechanics.">Impact Mechanics.</option>
+                                                    <option value="Incompressible Flow.">Incompressible Flow.</option>
+                                                    <option value="Instrumentation.">Instrumentation.</option>
+                                                    <option value="Internal combustion engine.">Internal combustion
+                                                        engine.</option>
+                                                    <option value="Machining.">Machining.</option>
+                                                    <option value="Magnetohydrodynamics(MHD).">Gas dynamics.</option>
+                                                    <option value="Manufacturing process.">Manufacturing process.
+                                                    </option>
+                                                    <option value="Marine Structures.">Marine Structures.</option>
+                                                    <option value="Mechanics of materials.">Mechanics of materials.
+                                                    </option>
+                                                    <option value="Mechanisms.">Mechanisms.</option>
+                                                    <option value="mechatronics.">mechatronics.</option>
+                                                    <option value="Meshless Numerical Methods.">Meshless Numerical
+                                                        Methods.</option>
+                                                    <option value="Micro and Nano Systems.">Micro and Nano Systems.
+                                                    </option>
+                                                    <option value="Nondestructive Testing.">Nondestructive Testing.
+                                                    </option>
+                                                    <option value="Nonlinear Response.">Nonlinear Response.</option>
+                                                    <option value="Nonlinear Solution.">Nonlinear Solution.</option>
+                                                    <option value="Optimization.">Optimization.</option>
+                                                    <option value="Perturbation technique.">Perturbation technique.
+                                                    </option>
+                                                    <option value="piezoelectric.">piezoelectric.</option>
+                                                    <option value="Plasticity.">Plasticity.</option>
+                                                    <option value="Plates and shells.">Plates and shells.</option>
+                                                    <option value="Porous Media.">Porous Media.</option>
+                                                    <option value="Power Generation.">Power Generation.</option>
+                                                    <option value="Pressure Vessels.">Pressure Vessels.</option>
+                                                    <option value="Production Methods.">Production Methods.</option>
+                                                    <option value="Robotics.">Robotics.</option>
+                                                    <option value="Shape Memory.">Shape Memory.</option>
+                                                    <option value="Smart Material.">Smart Material.</option>
+                                                    <option value="Solar Energy.">Solar Energy.</option>
+                                                    <option value="Stress Analysis.">Stress Analysis.</option>
+                                                    <option value="Thermodynamics and Cumbustion.">Thermodynamics and
+                                                        Cumbustion.</option>
+                                                    <option value="Turbulance.">Turbulance.</option>
+                                                    <option value="Vibration.">Vibration.</option>
+                                                    <option value="Welding.">Welding.</option>
+                                                </select>
+
+
+
+
+                                                <div class="form-group" style="padding-top: 20px;">
+                                                    <label for="Phone">Phone</label>
+                                                    <input type="number" class="form-control" id="Phone">
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="gender">Gender</label>
+                                            <div>
+
+                                                <label for="Male" class="radio-inline"><input type="radio" name="gender"
+                                                        id="male">Male</label>
+                                                <label for="Female" class="radio-inline"><input type="radio"
+                                                        name="gender" id="male">Female</label>
+                                                <label for="Others" class="radio-inline"><input type="radio"
+                                                        name="gender" id="Others">Others</label>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" class="form-control" id="email" name="email" required="required">
+
+
+                                        </div>
+                                        <div class="form-group" required>
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="pwd" name="pwd" required="required">
+                                        </div>
+
+                                        <div class="form-group" required>
+                                            <label for="password">Confirm Password</label>
+                                            <input type="password" class="form-control" id="cpwd" name="cpwd" required="required">
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label for="Country">Country</label>
+                                            <select name="titile" id="title" required="required" class="form-control">
+                                                <option value="India">India.</option>
+                                                <option value="United Kingdom.">United Kingdom.</option>
+                                                <option value="USA">USA.</option>
+                                                <option value="France.">France.</option>
+                                                <option value="Finland.">Finland.</option>
+                                                <option value="Canada">Canada.</option>
+                                                <option value="Bahrain.">Bahrain.</option>
+                                                <option value="Australia.">Australia.</option>
+                                                <option value="Austria.">Austria.</option>
+                                                <option value="Argentina">Argentina.</option>
+                                                <option value="Belgium.">Belgium.</option>
+                                                <option value="Brazil.">Brazil.</option>
+
+
+                                            </select>
+
+
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="City">City</label>
+                                            <input type="text" class="form-control" id="City ">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="Postal Code">Postal Code</label>
+                                            <input type="text" class="form-control" id="postal Code">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="Affiliation">Affiliation:</label>
+                                            <textarea class="form-control" rows="5" id="Affiliation"></textarea>
+
+                                        </div>
+
+
+
+                                    </div>
+                                    <br>
+
+
+                                    <button type="submit" class="btn btn-primary" value="submit"
+                                        name="submit">Submit</button>
+                                </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <script>
+        function validation(){
+            var pwd = document.regform.pwd.value;
+            var cpwd = document.regform.cpwd.value;
+            if(pwd.length < 8 ){
+                alert("Your password must have at least 8 chars.");
+                return false;
+            } else {
+                if(pwd != cpwd){
+                    alert("Entered password doesn't Match!");
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
