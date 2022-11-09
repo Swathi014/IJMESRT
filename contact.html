@@ -59,7 +59,7 @@
   $("#submit-form").submit((e) => {
     e.preventDefault()
     $.ajax({
-      url: "https://script.google.com/macros/s/AKfycbwDZsg51TEiGGDiFwtHZUxkH_EtqH5lV0LesX9uVkojN5O63mpJc4VTNo-uNdYagaAq/exec", //add appscript token here
+      url: "", //add appscript token here
       data: $("#submit-form").serialize(),
       method: "post",
       success: function (response) {

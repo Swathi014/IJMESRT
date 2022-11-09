@@ -1,3 +1,15 @@
+<?php
+  session_start();
+  if(isset($_SESSION["sessionuser"])){
+    if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
+      readfile('503error.html');
+      exit();
+    }
+  }else {
+    readfile('503error.html');
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +51,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href=index.html>Home</a></li>
+              <li><a class="dropdown-item" href=logout.php>Log Out</a></li>
 
             </ul>
           </li>
@@ -85,12 +98,12 @@
               <span>Remove Reviewer</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a href="" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-person-plus"></i></span>
               <span>Add Author</span>
             </a>
-          </li>
+          </li> -->
 
 
           <li>
@@ -127,29 +140,46 @@
         </div>
       </div>
       <div class="row">
+        <?php
+        require('connection.php');
+        $compl = "SELECT * FROM article WHERE status='completed'";
+        $pend = "SELECT * FROM article WHERE status='pending'";
+        $decl = "SELECT * FROM article WHERE status='declined'";
+        $close = "SELECT * FROM article WHERE status='closed'";
+        $result1 = mysqli_query($conn, $compl);
+        $result2 = mysqli_query($conn, $pend);
+        $result3 = mysqli_query($conn, $decl);
+        $result4 = mysqli_query($conn, $close);
+        if ($result1 && $result2 && $result3 && $result4) {
+          $count1 = mysqli_num_rows($result1);
+          $count2 = mysqli_num_rows($result2);
+          $count3 = mysqli_num_rows($result3);
+          $count4 = mysqli_num_rows($result4);
+        }
+        ?>
         <div class="col-md-3 mb-3">
           <div class="card  bg-success text-white h-100">
-            <div class="card-body py-5">Completed Assignments </div>
+            <div class="card-body py-5">Completed Assignments = <?php echo $count1; ?> </div>
 
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card bg-warning text-dark h-100">
-            <div class="card-body py-5">Pending Assignments</div>
+            <div class="card-body py-5">Pending Assignments = <?php echo $count2; ?></div>
 
 
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card bg-danger text-white h-100">
-            <div class="card-body py-5">Declined Assignments</div>
+            <div class="card-body py-5">Declined Assignments = <?php echo $count3; ?></div>
 
 
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <div class="card bg-primary text-white h-100">
-            <div class="card-body py-5">Closed Assignments</div>
+            <div class="card-body py-5">Closed Assignments = <?php echo $count4; ?></div>
 
 
           </div>
@@ -201,7 +231,8 @@
                       <th>Phone</th>
                       <th>Abstract</th>
                       <th>File name</th>
-                      <th>Status</th>
+                      <th>Current Status</th>
+                      <th>Change Status</th>
                     </tr>
                   </thead>
                   <?php
@@ -212,35 +243,53 @@
                   ?>
                     <tbody>
                       <tr>
-                        <td>
-                          <?php echo $row['username']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['firstname']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['lastname']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['email']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['affl']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['phno']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['abstract']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['fileToUpload']; ?>
-                        </td>
-                        <td>
-                          <?php echo $row['status']; ?>
-                        </td>
-                        
+                        <form name="tableform" action="edit.php" onsubmit="return validation()" method="get">
+                          <td>
+                            <?php echo $row['username']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['firstname']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['lastname']; ?>
+                          </td>
+                          <td>
+                            <input type="hidden" name="email" id="email" value="<?php echo $row['email']; ?>" />
+                            <?php echo $row['email']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['affl']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['phno']; ?>
+                          </td>
+                          <td>
+                            <?php echo $row['abstract']; ?>
+                          </td>
+                          <td>
+                            <a href="uploads/<?php echo $row['fileToUpload']; ?>">
+                              <?php echo $row['fileToUpload']; ?>
+                            </a>
+                          </td>
+                          <td>
+                            <input type="hidden" name="curstatus" id="curstatus" value="<?php echo $row['status']; ?>" />
+                            <?php echo $row['status']; ?>
+                          </td>
+                          <td>
+                            <select name="newstatus" id="newstatus">
+                              <option value="<?php echo $row['status']; ?>"><?php echo $row['status']; ?></option>
+                              <option value="completed">completed</option>
+                              <option value="pending">pending</option>
+                              <option value="declined">declined</option>
+                              <option value="closed">closed</option>
+                            </select>
+                            <!-- <input type="hidden" name="status" id="status" value="?php echo $row['status']; ?>"/> -->
+                          </td>
+                          <td>
 
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary" onclick="return validation()">Edit</button>
+                          </td>
+                        </form>
                       </tr>
                     <?php
                   }
@@ -272,6 +321,22 @@
                     </tfoot> -->
 
                 </table>
+                <script>
+                  function validation() {             
+                    var curstatus = document.getElementById('curstatus').value;
+                    var newstatus = document.getElementById('newstatus').value;
+                    // console.log(curstatus,newstatus);
+                    if(curstatus == newstatus){
+                      alert("No change in status");
+                      return false;
+                    } else {
+                      <?php 
+                        
+                        ?>
+                      return true;
+                    }
+                  }
+                </script>
               </div>
             </div>
           </div>
