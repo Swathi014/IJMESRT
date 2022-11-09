@@ -1188,9 +1188,24 @@ padding-bottom: 50px;
 }
 
 
+.card-title2{
+    color: #fff !important;
+}
 
 
-/*404 Error  */
+
+.pdetail{
+    width: 600px;
+    background-color: #ffffff;
+    padding-left: 20px;
+    color: #000000;
+    border-radius: 30px;
+    border : 1px solid #252E67;
+    
+}
+.pd{
+    font-size: 20px;
+}
 
 
 
