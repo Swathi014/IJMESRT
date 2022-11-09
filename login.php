@@ -30,6 +30,9 @@ if (isset($_POST['submit'])) {
                 if ($count == 1) {
                     // echo "<h1><center> Login successful </center></h1>";
                     // readfile('dashboard.html');
+                    session_start();
+                    $_SESSION['sessionuser'] = $username;
+                    $_SESSION['sessionadmin'] = 'true';
                     header('Location: dashboard.php');
                     exit();
                 } else {
@@ -44,6 +47,9 @@ if (isset($_POST['submit'])) {
                 if ($count == 1) {
                     // echo "<h1><center> Login successful </center></h1>";
                     // readfile('Login.html');
+                    session_start();
+                    $_SESSION["sessionuser"] = $username;
+                    $_SESSION["sessionadmin"] = 'false';
                     header('Location: upload.html');
                     exit();
                 } else {
