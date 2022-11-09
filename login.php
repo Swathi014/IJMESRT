@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                     session_start();
                     $_SESSION["sessionuser"] = $username;
                     $_SESSION["sessionadmin"] = 'false';
-                    header('Location: upload.html');
+                    header('Location: userdashboard.php');
                     exit();
                 } else {
                     echo "<h1> Login failed. Invalid username or password.</h1>";
