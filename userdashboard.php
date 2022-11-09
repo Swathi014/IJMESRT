@@ -115,33 +115,34 @@ if (!isset($_SESSION["sessionuser"])) {
 
 
                     <div class="card box-shadow mx-auto my-5" style="max-width: 400px; background-color: #252E67;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="images/download.svg" alt="">
-                            </div>
-                            <div class="col-md-8 ">
-                                <div class="card-body text-light">
-                                    <?php
-                                    include('connection.php');
-                                    $username = $_SESSION['sessionuser'];
-                                    $sql = "SELECT fileToUpload FROM article WHERE username='$username' ";
-                                    $result = mysqli_query($conn, $sql);
-                                    if (mysqli_num_rows($result) <= 0) {
-                                        echo "0 results";
-                                    } else {
-                                        while ($row = mysqli_fetch_assoc($result)) {
-                                    ?>
-                                            <h5><a href="uploads/<?php echo $row['fileToUpload']; ?>" class="card-title card-title2  fw-bold">DOWNLOAD</a></h5>
-                                    <?php
-                                        }
-                                    }
-
-                                    $conn->close();
-
-                                    ?>
+                        <?php
+                        include('connection.php');
+                        $username = $_SESSION['sessionuser'];
+                        $sql = "SELECT fileToUpload FROM article WHERE username='$username' ";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) <= 0) {
+                            echo "0 results";
+                        } else {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="images/download.svg" alt="">
+                                    </div>
+                                    <div class="col-md-8 ">
+                                        <div class="card-body text-light">
+                                            <h5><a href="uploads/<?php echo $row['fileToUpload']; ?>" class="card-title card-title2  fw-bold"><?php echo $row['fileToUpload']; ?></a></h5>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        }
+
+                        $conn->close();
+
+                        ?>
+
                     </div>
 
                 </div>

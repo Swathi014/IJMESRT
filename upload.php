@@ -1,5 +1,5 @@
 <?php
-$status = "";
+//Main starts
 if (isset($_POST['submit'])) {
   if (
     isset($_POST['email']) && isset($_POST['uname']) &&
@@ -7,14 +7,15 @@ if (isset($_POST['submit'])) {
     isset($_POST['addr']) && isset($_POST['affl']) && isset($_POST['phno']) && isset($_POST['phno_2']) && isset($_POST['fstudy']) && isset($_POST['abstract'])
   ) {
     toSave();
-    // toVerify();
   } else {
     echo "Something Went Wrong?! Please try again later.";
   }
 } else {
   return false;
 }
+//main ends
 
+//file save starts
 function toSave()
 {
   $target_dir = "uploads/";
@@ -62,12 +63,14 @@ function toSave()
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
       toDB();
-
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
   }
 }
+//file save ends
+
+//database entry starts
 function toDB()
 {
   if (isset($_POST['submit'])) {
@@ -119,15 +122,31 @@ function toDB()
           }
         } else {
           echo "Someone already registers using this email.";
+          remove();
         }
         $stmt->close();
         $conn->close();
       }
     } else {
       echo "All field are required.";
+      remove();
       die();
     }
   } else {
     echo "Submit button is not set";
   }
 }
+//database entry ends
+
+//remove on failure starts
+function remove()
+{
+
+  $fileToUpload = $_FILES["fileToUpload"]["name"];
+  if (!unlink($fileToUpload)) {
+    echo ("$fileToUpload cannot be deleted due to an error");
+  } else {
+    echo ("$fileToUpload has been deleted");
+  }
+}
+//remove on failuire ends
