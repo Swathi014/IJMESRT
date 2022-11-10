@@ -73,7 +73,7 @@
           <li>
             <a href="#" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-              <span>Dashboard</span>
+              <span>Reviewer Dashboard</span>
             </a>
           </li>
           <li class="my-4">
@@ -106,12 +106,12 @@
           </li> -->
 
 
-          <li>
+          <!-- <li>
             <a href="" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-person-x"></i></span>
               <span>Delete Author</span>
             </a>
-          </li>
+          </li> -->
           <li class="my-4">
             <hr class="dropdown-divider bg-light" />
           </li>
@@ -267,8 +267,8 @@
                             <?php echo $row['abstract']; ?>
                           </td>
                           <td>
-                            <a href="uploads/<?php echo $row['fileToUpload']; ?>">
-                              <?php echo $row['fileToUpload']; ?>
+                            <a href="uploads/<?php echo $row['filename']; ?>">
+                              <?php echo $row['filename']; ?>
                             </a>
                           </td>
                           <td>
