@@ -3,7 +3,7 @@ if (isset($_GET['submit'])) {
     include('connection.php');
     if (isset($_GET['email']) && isset($_GET['curstatus']) && isset($_GET['newstatus'])) {
         $email = $_GET['email'];
-        $curstatus = $_GET['curstatus'];
+        // $curstatus = $_GET['curstatus'];
         $newstatus = $_GET['newstatus'];
 
         if($newstatus != $curstatus){

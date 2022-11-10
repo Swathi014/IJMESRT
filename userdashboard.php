@@ -102,7 +102,7 @@ if (!isset($_SESSION["sessionuser"])) {
                             </div>
                             <div class="col-md-8 col-sm-12 ">
                                 <div class="card-body text-white">
-                                    <h5><a href="upload.html" class="card-title card-title2  fw-bold">UPLOAD</a></h5>
+                                    <h5><a href="upload.html" class="card-title card-title2  fw-bold">SUBMIT</a></h5>
 
                                 </div>
                             </div>
@@ -118,7 +118,7 @@ if (!isset($_SESSION["sessionuser"])) {
                         <?php
                         include('connection.php');
                         $username = $_SESSION['sessionuser'];
-                        $sql = "SELECT fileToUpload FROM article WHERE username='$username' ";
+                        $sql = "SELECT filename FROM article WHERE username='$username' ";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) <= 0) {
                             echo "0 results";
@@ -131,7 +131,7 @@ if (!isset($_SESSION["sessionuser"])) {
                                     </div>
                                     <div class="col-md-8 ">
                                         <div class="card-body text-light">
-                                            <h5><a href="uploads/<?php echo $row['fileToUpload']; ?>" class="card-title card-title2  fw-bold"><?php echo $row['fileToUpload']; ?></a></h5>
+                                            <h5><a href="uploads/<?php echo $row['filename']; ?>" class="card-title card-title2  fw-bold"><?php echo $row['filename']; ?></a></h5>
                                         </div>
                                     </div>
                                 </div>

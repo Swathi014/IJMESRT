@@ -19,13 +19,13 @@ if (isset($_POST['submit'])) {
 function toSave()
 {
   $target_dir = "uploads/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $target_file = $target_dir . basename($_FILES["filename"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
   // Check if image file is a actual image or fake image
   // if(isset($_POST["submit"])) {
-  //   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  //   $check = getimagesize($_FILES["filename"]["tmp_name"]);
   //   if($check !== false) {
   //     echo "File is an image - " . $check["mime"] . ".";
   //     $uploadOk = 1;
@@ -42,7 +42,7 @@ function toSave()
   }
 
   // Check file size
-  if ($_FILES["fileToUpload"]["size"] > 500000) {
+  if ($_FILES["filename"]["size"] > 500000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
   }
@@ -60,8 +60,8 @@ function toSave()
     echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
   } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
+    if (move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file)) {
+      echo "The file " . htmlspecialchars(basename($_FILES["filename"]["name"])) . " has been uploaded.";
       toDB();
     } else {
       echo "Sorry, there was an error uploading your file.";
@@ -91,7 +91,7 @@ function toDB()
       $phno_2 = $_POST['phno_2'];
       $fstudy = $_POST['fstudy'];
       $abstract = $_POST['abstract'];
-      $fileToUpload = $_FILES["fileToUpload"]["name"];
+      $filename = $_FILES["filename"]["name"];
 
       $host = "localhost";
       $dbUsername = "root";
@@ -102,7 +102,7 @@ function toDB()
         die('Could not connect to the database.');
       } else {
         $Select = "SELECT email FROM article WHERE email = ? LIMIT 1";
-        $Insert = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $Insert = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $conn->prepare($Select);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -113,7 +113,7 @@ function toDB()
         if ($rnum == 0) {
           $stmt->close();
           $stmt = $conn->prepare($Insert);
-          $stmt->bind_param("sssssssssss", $email, $username, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $fileToUpload);
+          $stmt->bind_param("sssssssssss", $email, $username, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $filename);
           if ($stmt->execute()) {
             // echo "New record inserted sucessfully.";
             readfile('index.html');
@@ -142,11 +142,11 @@ function toDB()
 function remove()
 {
 
-  $fileToUpload = $_FILES["fileToUpload"]["name"];
-  if (!unlink($fileToUpload)) {
-    echo ("$fileToUpload cannot be deleted due to an error");
+  $filename = $_FILES["filename"]["name"];
+  if (!unlink($filename)) {
+    echo ("$filename cannot be deleted due to an error");
   } else {
-    echo ("$fileToUpload has been deleted");
+    echo ("$filename has been deleted");
   }
 }
 //remove on failuire ends

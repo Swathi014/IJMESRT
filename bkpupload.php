@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $phno_2 = $_POST['phno_2'];
         $fstudy = $_POST['fstudy'];
         $abstract = $_POST['abstract'];
-        $fileToUpload = $_FILES["fileToUpload"]["name"];
+        $filename = $_FILES["filename"]["name"];
         // Create connection
         // $mysqliConnection = mysqli_connect($mysqliHost, $mysqliUser, $mysqliPassword, $mysqliDatabase);
         include('connection.php');
@@ -25,15 +25,15 @@ if (isset($_POST['submit'])) {
         // if (!$mysqliConnection) {die("Connection failed: " . mysqli_connect_error());}
 
         // $insertOfData = "INSERT INTO styles (userID,pictureLikes,pictureDislikes,pictureGender) VALUES ('$userID', '0', '0', '$userGender')";
-        $insertOfData = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, fileToUpload) values('$email','$username','$firstname','$lastname','$addr','$affl','$phno','$phno_2','$fstudy','$abstract','$fileToUpload')";
+        $insertOfData = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values('$email','$username','$firstname','$lastname','$addr','$affl','$phno','$phno_2','$fstudy','$abstract','$filename')";
 
         if (mysqli_query($conn, $insertOfData)) {
             $target_dir = "uploads/";
-            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            $target_file = $target_dir . basename($_FILES["filename"]["name"]);
             $uploadOk = 1;
             $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
             // Check file size
-            if ($_FILES["fileToUpload"]["size"] > 500000) {
+            if ($_FILES["filename"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
@@ -47,8 +47,8 @@ if (isset($_POST['submit'])) {
                 echo "Sorry, your file was not uploaded.";
                 // if everything is ok, try to upload file
             } else {
-                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                    echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+                if (move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file)) {
+                    echo "The file " . basename($_FILES["filename"]["name"]) . " has been uploaded.";
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }

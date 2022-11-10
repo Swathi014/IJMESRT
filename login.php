@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
                     session_start();
                     $_SESSION['sessionuser'] = $username;
                     $_SESSION['sessionadmin'] = 'true';
-                    header('Location: dashboard.php');
+                    header('Location: admindashboard.php');
                     exit();
                 } else {
                     echo "<h1> Login failed. Invalid username or password.</h1>";

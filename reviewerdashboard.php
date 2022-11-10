@@ -1,14 +1,14 @@
 <?php
-  session_start();
-  if(isset($_SESSION["sessionuser"])){
-    if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
-      readfile('503error.html');
-      exit();
-    }
-  }else {
-    readfile('503error.html');
-    exit();
-  }
+  // session_start();
+  // if(isset($_SESSION["sessionuser"])){
+  //   if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
+  //     readfile('503error.html');
+  //     exit();
+  //   }
+  // }else {
+  //   readfile('503error.html');
+  //   exit();
+  // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +31,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">Admin Dashboard</a>
+      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">Reviewer Dashboard</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -73,13 +73,13 @@
           <li>
             <a href="#" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-speedometer2"></i></span>
-              <span>Dashboard</span>
+              <span>Reviewer Dashboard</span>
             </a>
           </li>
           <li class="my-4">
             <hr class="dropdown-divider bg-light" />
           </li>
-          <li>
+          <!-- <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
               Interface
             </div>
@@ -97,7 +97,7 @@
               <span class="me-2"><i class="bi bi-person-x"></i></span>
               <span>Remove Reviewer</span>
             </a>
-          </li>
+          </li> -->
           <!-- <li>
             <a href="" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-person-plus"></i></span>
@@ -106,26 +106,26 @@
           </li> -->
 
 
-          <li>
+          <!-- <li>
             <a href="" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-person-x"></i></span>
               <span>Delete Author</span>
             </a>
-          </li>
-          <li class="my-4">
+          </li> -->
+          <!-- <li class="my-4">
             <hr class="dropdown-divider bg-light" />
           </li>
           <li>
             <div class="text-muted small fw-bold text-uppercase px-3 mb-3">
               Addons
             </div>
-          </li>
-          <li>
+          </li> -->
+          <!-- <li>
             <a href="#" class="nav-link px-3">
               <span class="me-2"><i class="bi bi-check-circle"></i></span>
               <span>New Reviewer Invitation</span>
             </a>
-          </li>
+          </li> -->
 
         </ul>
       </nav>
@@ -267,8 +267,8 @@
                             <?php echo $row['abstract']; ?>
                           </td>
                           <td>
-                            <a href="uploads/<?php echo $row['fileToUpload']; ?>">
-                              <?php echo $row['fileToUpload']; ?>
+                            <a href="uploads/<?php echo $row['filename']; ?>">
+                              <?php echo $row['filename']; ?>
                             </a>
                           </td>
                           <td>
