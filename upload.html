@@ -125,10 +125,11 @@ if(!isset($_SESSION['sessionuser']) && !isset($_SESSION['sessionadmin'])){
                                         <h2 class="steps">Step 1 - 4</h2>
                                     </div>
                                 </div>
+
                                 <label class="fieldlabels">Email: *</label>
                                 <input type="email" class="form-control" name="email" placeholder="Email Id" required>
-                                <label class="fieldlabels">Username: *</label>
 
+                                <label class="fieldlabels">Username: *</label>
                                 <input type="text" class="form-control" name="uname" placeholder="UserName" required />
                                 <!--  <label class="fieldlabels">Password: *</label>
                                 <input type="password" name="pwd" placeholder="Password" class="form-control" required>
@@ -165,9 +166,9 @@ if(!isset($_SESSION['sessionuser']) && !isset($_SESSION['sessionadmin'])){
                                 <label class="fieldlabels">Affiliation: *</label>
                                 <input type="text" name="affl" placeholder="Student, Professor, Engineer etc"
                                     class="form-control" required>
-                                <label class="fieldlabels">Contact No.: *</label>
+                                <label class="fieldlabels">Contact No: *</label>
                                 <input type="tel" name="phno" placeholder="Contact No. " class="form-control" required>
-                                <label class="fieldlabels">Alternate Contact No.: *</label>
+                                <label class="fieldlabels">Alternate Contact No: </label>
                                 <input type="tel" name="phno_2" placeholder="Alternate Contact No." />
                             </div>
                             <input type="button" name="next" class="next action-button" value="Next"
@@ -188,13 +189,93 @@ if(!isset($_SESSION['sessionuser']) && !isset($_SESSION['sessionadmin'])){
                                         <h2 class="steps">Step 3 - 4</h2>
                                     </div>
                                 </div>
-                                <label class="fieldlabels">Field Of Study: *</label>
-                                <input type="text" name="fstudy" placeholder="Field Of Study" class="form-control"
-                                    required>
-                                <label class="fieldlabels">Abstract: *</label>
 
+                                <label class="fieldlabels">Field Of Study: *</label>
+                                <!-- <input type="text" name="fstudy" placeholder="Field Of Study" class="form-control" required> -->
+                                <select id="fstudy" name="fstudy" required="required" class="form-control">
+                                    <option value="">----</option>
+                                    <option value="Aerodynamics">Aerodynamics.</option>
+                                    <option value="Automation.">Automation.</option>
+                                    <option value="biomachanics.">biomachanics.</option>
+                                    <option value="Castings.">Castings.</option>
+                                    <option value="Composite Materials.">Composite Materials.</option>
+                                    <option value="compressible Flow.">compressible flow.</option>
+                                    <option value="Computational Fluid dynamics (CFD).">Computational
+                                        fluid dynamics (CFD).</option>
+                                    <option value="Computational Fluid Mechanics(CFM).">Computational
+                                        Fluid Mechanics(CFM).</option>
+                                    <option value="Control.">Control.</option>
+                                    <option value="Damage Mechanics.">Damage Mechanics.</option>
+                                    <option value="Daynamics.">Daynamics.</option>
+                                    <option value="Dynamic Response.">Dynamic Response.</option>
+                                    <option value="Elasticity.">Elasticity.</option>
+                                    <option value="Energy science and technology.">Energy science and
+                                        technology.</option>
+                                    <option value="Energy Systems.">Energy Systems.</option>
+                                    <option value="Environmental Applications.">Environmental
+                                        Applications.</option>
+                                    <option value="Fatigue.">Fatigue.</option>
+                                    <option value="Finite element methods(FEM).">Finite element
+                                        methods(FEM).</option>
+                                    <option value="Fluid mechanics.">Fluid mechanics.</option>
+                                    <option value="Forced response.">Forced response.</option>
+                                    <option value="Forming.">Forming.</option>
+                                    <option value="Fracture mechanics.">Fracture mechanics.</option>
+                                    <option value="Free response.">Free response.</option>
+                                    <option value="Fuel cells.">Fuel cells.</option>
+                                    <option value="Gas dynamics.">Gas dynamics.</option>
+                                    <option value="Heat and mass transfer.">Heat and mass transfer.
+                                    </option>
+                                    <option value="Hydraulic and pneumatic systems.">Hydraulic and
+                                        pneumatic systems.</option>
+                                    <option value="Impact Mechanics.">Impact Mechanics.</option>
+                                    <option value="Incompressible Flow.">Incompressible Flow.</option>
+                                    <option value="Instrumentation.">Instrumentation.</option>
+                                    <option value="Internal combustion engine.">Internal combustion
+                                        engine.</option>
+                                    <option value="Machining.">Machining.</option>
+                                    <option value="Magnetohydrodynamics(MHD).">Gas dynamics.</option>
+                                    <option value="Manufacturing process.">Manufacturing process.
+                                    </option>
+                                    <option value="Marine Structures.">Marine Structures.</option>
+                                    <option value="Mechanics of materials.">Mechanics of materials.
+                                    </option>
+                                    <option value="Mechanisms.">Mechanisms.</option>
+                                    <option value="mechatronics.">mechatronics.</option>
+                                    <option value="Meshless Numerical Methods.">Meshless Numerical
+                                        Methods.</option>
+                                    <option value="Micro and Nano Systems.">Micro and Nano Systems.
+                                    </option>
+                                    <option value="Nondestructive Testing.">Nondestructive Testing.
+                                    </option>
+                                    <option value="Nonlinear Response.">Nonlinear Response.</option>
+                                    <option value="Nonlinear Solution.">Nonlinear Solution.</option>
+                                    <option value="Optimization.">Optimization.</option>
+                                    <option value="Perturbation technique.">Perturbation technique.
+                                    </option>
+                                    <option value="piezoelectric.">piezoelectric.</option>
+                                    <option value="Plasticity.">Plasticity.</option>
+                                    <option value="Plates and shells.">Plates and shells.</option>
+                                    <option value="Porous Media.">Porous Media.</option>
+                                    <option value="Power Generation.">Power Generation.</option>
+                                    <option value="Pressure Vessels.">Pressure Vessels.</option>
+                                    <option value="Production Methods.">Production Methods.</option>
+                                    <option value="Robotics.">Robotics.</option>
+                                    <option value="Shape Memory.">Shape Memory.</option>
+                                    <option value="Smart Material.">Smart Material.</option>
+                                    <option value="Solar Energy.">Solar Energy.</option>
+                                    <option value="Stress Analysis.">Stress Analysis.</option>
+                                    <option value="Thermodynamics and Cumbustion.">Thermodynamics and
+                                        Cumbustion.</option>
+                                    <option value="Turbulance.">Turbulance.</option>
+                                    <option value="Vibration.">Vibration.</option>
+                                    <option value="Welding.">Welding.</option>
+                                </select>
+
+                                <label class="fieldlabels">Abstract: *</label>
                                 <textarea rows="5" type="text" name="abstract" placeholder="Abstract"
                                     required="required" rows="5" class="form-control" required></textarea>
+
                                 <label class="fieldlabels">Upload Your Journal:</label>
                                 <input type="file" id="fileToUpload" name="fileToUpload" accept=".pdf, .doc, .docx"
                                     class="form-control" required>
