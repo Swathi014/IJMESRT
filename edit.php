@@ -11,7 +11,7 @@ if (isset($_GET['submit'])) {
 
         if (mysqli_query($conn, $sql)) {
             echo "Record updated successfully";
-            header('Location: dashboard.php');
+            header('Location: admindashboard.php');
           } else {
             echo "Error updating record: " . mysqli_error($conn);
           }
