@@ -274,10 +274,11 @@ if (isset($_SESSION["sessionuser"])) {
                             </a>
                           </td>
                           <td>
+                          <input type="hidden" name="curreviewer" id="curreviewer" value="<?php echo $row['reviewer']; ?>" />
                             <?php echo $row['reviewer']; ?>
                           </td>
                           <td>
-                          <select name="s-reviewer" id="s-reviewer">
+                          <select name="setreviewer" id="setreviewer">
                             <option value="<?php echo $row['reviewer'] ?>"><?php echo $row['reviewer'] ?></option>
                               <?php
                               $sql = "SELECT * FROM user WHERE admin='1'";
@@ -342,8 +343,10 @@ if (isset($_SESSION["sessionuser"])) {
                   function validation() {
                     var curstatus = document.getElementById('curstatus').value;
                     var newstatus = document.getElementById('newstatus').value;
+                    var curreviewer = document.getElementById('newstatus').value;
+                    var newreviewer = document.getElementById('newstatus').value;
                     // console.log(curstatus,newstatus);
-                    if (curstatus == newstatus) {
+                    if (curstatus == newstatus && curreviewer == newreviewer) {
                       alert("No change in status");
                       return false;
                     } else {
