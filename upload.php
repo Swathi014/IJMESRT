@@ -54,14 +54,26 @@ function toSave()
     $uploadOk = 0;
   }
 
+  //naming
+  include('connection.php');
+  $num = mysqli_query($conn, 'SELECT MAX(id) as max FROM article');
+  while ($res = mysqli_fetch_array($num)) {
+    $maxid = $res['max'];
+    // echo $maxid;
+  }
+  $maxid = $maxid + 1;
+  $tmp = explode(".", $_FILES["filename"]["name"]);
+  $newfileName = '22IJMESRT' . $maxid . '.' . end($tmp);
+  $new_target_file = $target_dir . $newfileName;
+
   // Check if $uploadOk is set to 0 by an error
   if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
     // if everything is ok, try to upload file
   } else {
-    if (move_uploaded_file($_FILES["filename"]["tmp_name"], $target_file)) {
+    if (move_uploaded_file($_FILES["filename"]["tmp_name"], $new_target_file)) {
       echo "The file " . htmlspecialchars(basename($_FILES["filename"]["name"])) . " has been uploaded.";
-      toDB();
+      toDB($newfileName);
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
@@ -70,7 +82,7 @@ function toSave()
 //file save ends
 
 //database entry starts
-function toDB()
+function toDB($newfileName)
 {
   if (isset($_POST['submit'])) {
     include('connection.php');
@@ -91,7 +103,8 @@ function toDB()
       $phno_2 = $_POST['phno_2'];
       $fstudy = $_POST['fstudy'];
       $abstract = $_POST['abstract'];
-      $filename = $_FILES["filename"]["name"];
+      // $filename = $_FILES["filename"]["name"];
+      $filename = $newfileName;
 
       // $host = "localhost";
       // $dbUsername = "root";
@@ -129,11 +142,11 @@ function toDB()
       // }
       //---------------------------------------------------------
       $sql = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values('$email', '$username', '$firstname', '$lastname', '$addr', '$affl', '$phno', '$phno_2', '$fstudy', '$abstract', '$filename')";
-      if(mysqli_query($conn, $sql)){
+      if (mysqli_query($conn, $sql)) {
         readfile('index.html');
       } else {
         echo "Error "
-            . mysqli_error($conn);
+          . mysqli_error($conn);
       }
       mysqli_close($conn);
     } else {
