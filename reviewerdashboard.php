@@ -243,7 +243,7 @@
                   ?>
                     <tbody>
                       <tr>
-                        <form name="tableform" action="edit.php" onsubmit="return validation()" method="get">
+                        <form name="tableform" action="revieweredit.php" onsubmit="return validation()" method="get">
                           <td>
                             <?php echo $row['username']; ?>
                           </td>

@@ -1,14 +1,14 @@
 <?php
-  session_start();
-  if(isset($_SESSION["sessionuser"])){
-    if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
-      readfile('503error.html');
-      exit();
-    }
-  }else {
+session_start();
+if (isset($_SESSION["sessionuser"])) {
+  if (isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false') {
     readfile('503error.html');
     exit();
   }
+} else {
+  readfile('503error.html');
+  exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -231,6 +231,8 @@
                       <th>Phone</th>
                       <th>Abstract</th>
                       <th>File name</th>
+                      <th>Requested Reviewer</th>
+                      <th>Assign Reviewer</th>
                       <th>Current Status</th>
                       <th>Change Status</th>
                     </tr>
@@ -243,7 +245,7 @@
                   ?>
                     <tbody>
                       <tr>
-                        <form name="tableform" action="edit.php" onsubmit="return validation()" method="get">
+                        <form name="tableform" action="adminedit.php" onsubmit="return validation()" method="get">
                           <td>
                             <?php echo $row['username']; ?>
                           </td>
@@ -270,6 +272,22 @@
                             <a href="uploads/<?php echo $row['filename']; ?>">
                               <?php echo $row['filename']; ?>
                             </a>
+                          </td>
+                          <td>
+                          <input type="hidden" name="curreviewer" id="curreviewer" value="<?php echo $row['reviewer']; ?>" />
+                            <?php echo $row['reviewer']; ?>
+                          </td>
+                          <td>
+                          <select name="setreviewer" id="setreviewer">
+                            <option value="<?php echo $row['reviewer'] ?>"><?php echo $row['reviewer'] ?></option>
+                              <?php
+                              $sql = "SELECT * FROM user WHERE admin='1'";
+                              $reslt = mysqli_query($conn, $sql);
+                              while ($rw = mysqli_fetch_array($reslt, MYSQLI_ASSOC)) {
+                              ?>
+                                <option value="<?php echo $rw['username']; ?>"><?php echo $rw['username']; }?></option>
+                              
+                            </select>
                           </td>
                           <td>
                             <input type="hidden" name="curstatus" id="curstatus" value="<?php echo $row['status']; ?>" />
@@ -322,17 +340,19 @@
 
                 </table>
                 <script>
-                  function validation() {             
+                  function validation() {
                     var curstatus = document.getElementById('curstatus').value;
                     var newstatus = document.getElementById('newstatus').value;
+                    var curreviewer = document.getElementById('newstatus').value;
+                    var newreviewer = document.getElementById('newstatus').value;
                     // console.log(curstatus,newstatus);
-                    if(curstatus == newstatus){
+                    if (curstatus == newstatus && curreviewer == newreviewer) {
                       alert("No change in status");
                       return false;
                     } else {
-                      <?php 
-                        
-                        ?>
+                      <?php
+
+                      ?>
                       return true;
                     }
                   }
