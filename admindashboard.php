@@ -245,7 +245,7 @@ if (isset($_SESSION["sessionuser"])) {
                   ?>
                     <tbody>
                       <tr>
-                        <form name="tableform" action="edit.php" onsubmit="return validation()" method="get">
+                        <form name="tableform" action="adminedit.php" onsubmit="return validation()" method="get">
                           <td>
                             <?php echo $row['username']; ?>
                           </td>
