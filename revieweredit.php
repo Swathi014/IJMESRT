@@ -1,13 +1,11 @@
 <?php
 if (isset($_GET['submit'])) {
     include('connection.php');
-    if (isset($_GET['email']) && isset($_GET['curstatus']) && isset($_GET['newstatus']) && isset($_GET['curreviewer']) && isset($_GET['setreviewer'])) {
+    if (isset($_GET['email']) && isset($_GET['curstatus']) && isset($_GET['newstatus'])) {
 
         $email = $_GET['email'];
         $curstatus = $_GET['curstatus'];
         $newstatus = $_GET['newstatus'];
-        // $curreviewer = $_GET['curreviewer'];
-        // $setreviewer = $_GET['setreviewer'];
 
         if ($newstatus != $curstatus) {
             $sql = "UPDATE article SET status = '$newstatus' WHERE email = '$email'";

@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
             $count = mysqli_num_rows($result);
 
             if($count == 1){
-                $sql = "UPDATE user SET admin='1' WHERE username='$username'";
+                $sql = "UPDATE user SET admin='2' WHERE username='$username'"; //admin=2 means reviewer
                 if (mysqli_query($conn, $sql)) {
                     echo "Record updated successfully";
                   } else {
