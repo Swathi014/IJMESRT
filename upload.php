@@ -49,7 +49,6 @@ function toSave()
 
   // Allow certain file formats
   if ($imageFileType != "pdf" && $imageFileType != "doc" && $imageFileType != "docx") {
-    // echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $error_msg = 'only document file type supported';
     echo $error_msg;
     $uploadOk = 0;
@@ -74,6 +73,7 @@ function toSave()
 function toDB()
 {
   if (isset($_POST['submit'])) {
+    include('connection.php');
     if (
       isset($_POST['email']) && isset($_POST['uname']) &&
       isset($_POST['fname']) && isset($_POST['lname']) &&
@@ -93,40 +93,49 @@ function toDB()
       $abstract = $_POST['abstract'];
       $filename = $_FILES["filename"]["name"];
 
-      $host = "localhost";
-      $dbUsername = "root";
-      $dbPassword = "";
-      $dbName = "article_site";
-      $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
-      if ($conn->connect_error) {
-        die('Could not connect to the database.');
+      // $host = "localhost";
+      // $dbUsername = "root";
+      // $dbPassword = "";
+      // $dbName = "article_site";
+      // $conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
+      // if ($conn->connect_error) {
+      //   die('Could not connect to the database.');
+      // } else {
+      //   $Select = "SELECT email FROM article WHERE email = ? LIMIT 1";
+      //   $Insert = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      //   $stmt = $conn->prepare($Select);
+      //   $stmt->bind_param("s", $email);
+      //   $stmt->execute();
+      //   $stmt->bind_result($resultEmail);
+      //   $stmt->store_result();
+      //   $stmt->fetch();
+      //   $rnum = $stmt->num_rows;
+      //   if ($rnum == 0) {
+      //     $stmt->close();
+      //     $stmt = $conn->prepare($Insert);
+      //     $stmt->bind_param("sssssssssss", $email, $username, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $filename);
+      //     if ($stmt->execute()) {
+      //       // echo "New record inserted sucessfully.";
+      //       readfile('index.html');
+      //     } else {
+      //       echo $stmt->error;
+      //     }
+      //   } else {
+      //     echo "Someone already registers using this email.";
+      //     remove();
+      //   }
+      //   $stmt->close();
+      //   $conn->close();
+      // }
+      //---------------------------------------------------------
+      $sql = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values('$email', '$username', '$firstname', '$lastname', '$addr', '$affl', '$phno', '$phno_2', '$fstudy', '$abstract', '$filename')";
+      if(mysqli_query($conn, $sql)){
+        readfile('index.html');
       } else {
-        $Select = "SELECT email FROM article WHERE email = ? LIMIT 1";
-        $Insert = "INSERT INTO article(email, username, firstname, lastname, addr, affl, phno, phno_2, fstudy, abstract, filename) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($Select);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->bind_result($resultEmail);
-        $stmt->store_result();
-        $stmt->fetch();
-        $rnum = $stmt->num_rows;
-        if ($rnum == 0) {
-          $stmt->close();
-          $stmt = $conn->prepare($Insert);
-          $stmt->bind_param("sssssssssss", $email, $username, $firstname, $lastname, $addr, $affl, $phno, $phno_2, $fstudy, $abstract, $filename);
-          if ($stmt->execute()) {
-            // echo "New record inserted sucessfully.";
-            readfile('index.html');
-          } else {
-            echo $stmt->error;
-          }
-        } else {
-          echo "Someone already registers using this email.";
-          remove();
-        }
-        $stmt->close();
-        $conn->close();
+        echo "Error "
+            . mysqli_error($conn);
       }
+      mysqli_close($conn);
     } else {
       echo "All field are required.";
       remove();
