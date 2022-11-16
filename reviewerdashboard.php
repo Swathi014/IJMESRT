@@ -1,14 +1,14 @@
 <?php
-  // session_start();
-  // if(isset($_SESSION["sessionuser"])){
-  //   if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] == 'false'){
-  //     readfile('503error.html');
-  //     exit();
-  //   }
-  // }else {
-  //   readfile('503error.html');
-  //   exit();
-  // }
+  session_start();
+  if(isset($_SESSION["sessionuser"])){
+    if(isset($_SESSION["sessionadmin"]) && $_SESSION["sessionadmin"] != 'reviewer'){
+      readfile('503error.html');
+      exit();
+    }
+  }else {
+    readfile('503error.html');
+    exit();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -237,7 +237,8 @@
                   </thead>
                   <?php
                   require("connection.php");
-                  $sql = 'SELECT * FROM article';
+                  $user = $_SESSION['sessionuser'];
+                  $sql = "SELECT * FROM article WHERE reviewer='$user'";
                   $result = mysqli_query($conn, $sql);
                   while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
                   ?>
