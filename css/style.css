@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 
-
+::-webkit-scrollbar {
+    display: none;
+}
 
 .navbar-brand{
     font-size: 40px;
@@ -485,7 +487,7 @@ h1 span{
     padding: 2%;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    color: ;
+    
 }
 .contact-info{
     margin-top:10%;
@@ -1205,6 +1207,12 @@ padding-bottom: 50px;
 }
 .pd{
     font-size: 20px;
+}
+
+.APC{
+    font-size: 12px;
+    font-style: normal;
+    font-weight: lighter;
 }
 
 
