@@ -1215,10 +1215,17 @@ padding-bottom: 50px;
     font-weight: lighter;
 }
 
+/* call for paper */
 
+.callforpaper a{
+    color: rgb(251 255 0);
+    
+}
 
-
-
+.page{
+    font-size: 16px;
+    color: #000000;
+}
 
 
 
