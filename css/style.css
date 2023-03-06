@@ -342,6 +342,16 @@ section {
         width: 95%;
         padding: 77px;
     }
+    .callforpaper a {
+        color: rgb(251 255 0) !important;
+    }
+    .row.col-md-9.col-md-offset-0 {
+        padding-left: 0px !important;
+    }
+    .login .row{
+       margin-left: 0px !important;
+    }
+    
 }
 
 .subscribe__btn {
@@ -1192,7 +1202,7 @@ html {
 /* call for paper */
 
 .callforpaper a {
-    color: rgb(251 255 0);
+    color: rgb(251 255 0) !important;
 }
 
 .page {
